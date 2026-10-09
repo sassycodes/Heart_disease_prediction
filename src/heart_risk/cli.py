@@ -112,3 +112,14 @@ def split() -> None:
     except Exception as exc:
         click.echo(f"[FAIL] split FAILED - {exc}", err=True)
         sys.exit(1)
+
+@cli.command("train-cv")
+def train_cv() -> None:
+    """Run Phase 4 CV model comparison."""
+    from heart_risk.models.train import run_training_cv
+    try:
+        settings = get_settings()
+        run_training_cv(settings)
+    except Exception as exc:
+        click.echo(f"[FAIL] train-cv FAILED - {exc}", err=True)
+        sys.exit(1)

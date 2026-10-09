@@ -136,3 +136,29 @@ The decision on whether `ca`, `thal`, and `slope` become model features will be 
 Switzerland has 100% missing `chol` and 61% missing `fbs`. Evaluating it on F1 would mean evaluating mostly on imputed data, rendering the test invalid. F2 drops these to provide a robust check for Switzerland. VA Long Beach has ~28% missingness in several F1 features, so checking both complete-case and imputed performance reveals imputation degradation.
 
 **Alternative rejected:** Pooled dataset with all features. Rejected because it enables shortcut learning via missingness proxies (confounding), falsely inflating model performance.
+
+---
+
+## ADR-011: Hyperparameter Tuning and Threshold Strategy
+
+**Decision:**
+1. **Metric:** We tune models using RandomizedSearchCV scoring strictly on **ROC-AUC**, not Recall or Precision.
+2. **Class Weights:** Set `class_weight=None` (no class weighting) for all models, including XGBoost (`scale_pos_weight=1`).
+
+**Why:**
+Tuning on a hard-classification metric like Recall or F-score at a default threshold of 0.5 is inherently unstable, especially when base rates differ or when we care about specific operating points. ROC-AUC evaluates the model's ability to rank patients correctly regardless of the threshold. Because our classes are reasonably balanced (~41/59) in the primary training set, class weighting is unnecessary. We will handle class imbalance and maximize Recall by explicitly picking an optimal threshold *after* the model is trained, rather than forcing the model to distort its probabilities during training.
+
+---
+
+## ADR-012: The 1-Standard Error (1-SE) Selection Rule
+
+**Decision:**
+When selecting the final hyperparameter configuration from cross-validation, we will use the 1-SE rule: among all configurations whose mean AUC is within one standard error of the absolute best mean AUC, pick the **simplest** configuration.
+
+Complexity ordering (from simplest to most complex):
+- **Logistic Regression:** Ascending `C` (higher regularization).
+- **Random Forest:** Ascending `max_depth`, then Descending `min_samples_leaf`, then Ascending `n_estimators`.
+- **XGBoost:** Ascending `max_depth`, then Descending `min_child_weight`, then Descending `reg_lambda` (higher = more regularized = simpler), then Ascending `n_estimators`. (Subsample/colsample are ignored for complexity ordering).
+
+**Why:**
+CV scores have variance (especially with overlapping repeated-CV folds). Picking the absolute highest AUC often selects over-complex models that fit to noise. The 1-SE rule formally defines the noise threshold and biases us toward simpler, more robust models that will generalize better to the external sets.

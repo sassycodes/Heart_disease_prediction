@@ -19,7 +19,7 @@ VENV_BIN   := $(VENV)/Scripts   # Windows path; change to $(VENV)/bin on Linux/m
 PIP        := $(VENV_BIN)/pip
 HEART_RISK := $(VENV_BIN)/heart-risk
 
-.PHONY: setup db-up db-down db-check ingest test eda clean split
+.PHONY: setup db-up db-down db-check ingest test eda clean split train-cv
 
 # ── 1. Create venv and install all dependencies ───────────────────────────────
 setup:
@@ -71,3 +71,8 @@ clean:
 split:
 	@echo "→ Running Phase 4 Data Split..."
 	$(HEART_RISK) split && echo "✓ Split complete." || (echo "✗ Split FAILED." && exit 1)
+
+# ── 10. Run CV Model Comparison ──────────────────────────────────────────────
+train-cv:
+	@echo "→ Running Phase 4 CV Model Comparison..."
+	$(HEART_RISK) train-cv && echo "✓ CV Training complete." || (echo "✗ CV Training FAILED." && exit 1)
