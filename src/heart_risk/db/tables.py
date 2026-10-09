@@ -19,7 +19,7 @@ WHY all String (TEXT) for CSV columns?
 
 from __future__ import annotations
 
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, Float
 from sqlalchemy.orm import DeclarativeBase
 
 
@@ -87,3 +87,38 @@ class IngestionLog(Base):
 
     def __repr__(self) -> str:
         return f"<IngestionLog log_id={self.log_id} status={self.status}>"
+
+
+class PatientClean(Base):
+    """
+    ORM model for the `patients_clean` table.
+    
+    Contains cleaned, appropriately typed data, with target binarization applied.
+    """
+
+    __tablename__ = "patients_clean"
+
+    row_id = Column(Integer, primary_key=True)  # Inherited lowest row_id from exact duplicates
+    id       = Column(Text, nullable=False)
+    age      = Column(Float)
+    sex      = Column(Text)
+    dataset  = Column(Text)
+    cp       = Column(Text)
+    trestbps = Column(Float)
+    chol     = Column(Float)
+    fbs      = Column(Text) # Boolean represented as TRUE/FALSE strings, will parse to numeric later if needed, but for now we keep as text/boolean depending on parsing
+    restecg  = Column(Text)
+    thalch   = Column(Float)
+    exang    = Column(Text)
+    oldpeak  = Column(Float)
+    slope    = Column(Text)
+    ca       = Column(Text)
+    thal     = Column(Text)
+    num      = Column(Text)
+    target   = Column(Integer, nullable=False) # binarized 0 vs 1
+
+    ingested_at        = Column(DateTime(timezone=True))
+    source_file_sha256 = Column(Text, nullable=False)
+
+    def __repr__(self) -> str:
+        return f"<PatientClean row_id={self.row_id} id={self.id}>"

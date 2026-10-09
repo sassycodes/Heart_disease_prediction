@@ -27,7 +27,7 @@ import pandas as pd
 from sqlalchemy import Engine, func, select, text
 from sqlalchemy.orm import Session
 
-from heart_risk.db.tables import IngestionLog, PatientRaw
+from heart_risk.db.tables import IngestionLog, PatientRaw, PatientClean
 
 
 # ── Schema creation ───────────────────────────────────────────────────────────
@@ -175,3 +175,30 @@ def log_ingestion(
         )
         session.add(entry)
         session.commit()
+
+# ── Clean patient data ────────────────────────────────────────────────────────
+
+def write_clean(engine: Engine, df: pd.DataFrame) -> None:
+    """
+    Writes the cleaned dataframe to the `patients_clean` table.
+    Overwrites the table entirely since this is a reproducible pipeline.
+    """
+    with Session(engine) as session:
+        try:
+            # Idempotency: truncate before writing
+            session.execute(text(f"DELETE FROM {PatientClean.__tablename__}"))
+            
+            # Write records
+            records = df.to_dict(orient="records")
+            # Replace NaNs with None for SQLAlchemy
+            for r in records:
+                for k, v in r.items():
+                    if pd.isna(v):
+                        r[k] = None
+                        
+            session.bulk_insert_mappings(PatientClean, records)
+            
+            session.commit()
+        except Exception as e:
+            session.rollback()
+            raise RuntimeError(f"Failed to write clean data: {e}") from e

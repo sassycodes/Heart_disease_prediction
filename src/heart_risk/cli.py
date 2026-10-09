@@ -88,3 +88,27 @@ def eda() -> None:
     except Exception as exc:
         click.echo(f"[FAIL] eda FAILED - {exc}", err=True)
         sys.exit(1)
+
+@cli.command("clean")
+def clean() -> None:
+    """Run Phase 3 data cleaning."""
+    from heart_risk.data.clean import run_cleaning
+    try:
+        settings = get_settings()
+        engine = build_engine(settings)
+        create_tables(engine) # Ensure tables exist
+        run_cleaning(settings)
+    except Exception as exc:
+        click.echo(f"[FAIL] clean FAILED - {exc}", err=True)
+        sys.exit(1)
+
+@cli.command("split")
+def split() -> None:
+    """Run Phase 4 data split."""
+    from heart_risk.data.split import run_split
+    try:
+        settings = get_settings()
+        run_split(settings)
+    except Exception as exc:
+        click.echo(f"[FAIL] split FAILED - {exc}", err=True)
+        sys.exit(1)

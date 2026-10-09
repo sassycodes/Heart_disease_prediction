@@ -72,3 +72,28 @@ target:
   num:
     type: target
     formulation: binary # 0 vs >0
+
+# Defining feature sets to be used in modeling
+feature_sets:
+  # F1: Primary app-deployable set. Drops ca, thal, slope due to massive missingness (hospital-skewed).
+  F1:
+    - age
+    - sex
+    - cp
+    - trestbps
+    - chol
+    - fbs
+    - restecg
+    - thalch
+    - exang
+    - oldpeak
+  # F2: Robustness set for Switzerland. Drops chol and fbs because they are wildly missing there.
+  F2:
+    - age
+    - sex
+    - cp
+    - trestbps
+    - restecg
+    - thalch
+    - exang
+    - oldpeak

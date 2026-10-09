@@ -1,0 +1,124 @@
+row_id,id,age,sex,dataset,cp,trestbps,chol,fbs,restecg,thalch,exang,oldpeak,slope,ca,thal,num,target,ingested_at,source_file_sha256
+4278,598,32.0,Male,Switzerland,typical angina,95.0,,,normal,127.0,FALSE,0.7,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4279,599,34.0,Male,Switzerland,asymptomatic,115.0,,,,154.0,FALSE,0.2,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4280,600,35.0,Male,Switzerland,asymptomatic,,,,normal,130.0,TRUE,,,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4281,601,36.0,Male,Switzerland,asymptomatic,110.0,,,normal,125.0,TRUE,1.0,flat,,fixed defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4282,602,38.0,Female,Switzerland,asymptomatic,105.0,,,normal,166.0,FALSE,2.8,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4283,603,38.0,Female,Switzerland,asymptomatic,110.0,,FALSE,normal,156.0,FALSE,0.0,flat,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4284,604,38.0,Male,Switzerland,non-anginal,100.0,,,normal,179.0,FALSE,-1.1,upsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4285,605,38.0,Male,Switzerland,non-anginal,115.0,,FALSE,normal,128.0,TRUE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4286,606,38.0,Male,Switzerland,asymptomatic,135.0,,,normal,150.0,FALSE,0.0,,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4287,607,38.0,Male,Switzerland,asymptomatic,150.0,,,normal,120.0,TRUE,,,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4288,608,40.0,Male,Switzerland,asymptomatic,95.0,,,st-t abnormality,144.0,FALSE,0.0,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4289,609,41.0,Male,Switzerland,asymptomatic,125.0,,,normal,176.0,FALSE,1.6,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4290,610,42.0,Male,Switzerland,asymptomatic,105.0,,,normal,128.0,TRUE,-1.5,downsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4291,611,42.0,Male,Switzerland,asymptomatic,145.0,,FALSE,normal,99.0,TRUE,0.0,flat,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4292,612,43.0,Male,Switzerland,asymptomatic,100.0,,,normal,122.0,FALSE,1.5,downsloping,,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4293,613,43.0,Male,Switzerland,asymptomatic,115.0,,FALSE,normal,145.0,TRUE,2.0,flat,,reversable defect,4,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4294,614,43.0,Male,Switzerland,asymptomatic,140.0,,FALSE,st-t abnormality,140.0,TRUE,0.5,upsloping,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4295,615,45.0,Male,Switzerland,non-anginal,110.0,,,normal,138.0,FALSE,-0.1,upsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4296,616,46.0,Male,Switzerland,asymptomatic,100.0,,,st-t abnormality,133.0,FALSE,-2.6,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4297,617,46.0,Male,Switzerland,asymptomatic,115.0,,FALSE,normal,113.0,TRUE,1.5,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4298,618,47.0,Male,Switzerland,non-anginal,110.0,,,normal,120.0,TRUE,0.0,,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4299,619,47.0,Male,Switzerland,non-anginal,155.0,,FALSE,normal,118.0,TRUE,1.0,flat,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4300,620,47.0,Male,Switzerland,asymptomatic,110.0,,,st-t abnormality,149.0,FALSE,2.1,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4301,621,47.0,Male,Switzerland,asymptomatic,160.0,,FALSE,normal,124.0,TRUE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4302,622,48.0,Male,Switzerland,asymptomatic,115.0,,,normal,128.0,FALSE,0.0,flat,,fixed defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4303,623,50.0,Female,Switzerland,asymptomatic,160.0,,,normal,110.0,FALSE,0.0,,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4304,624,50.0,Male,Switzerland,asymptomatic,115.0,,FALSE,normal,120.0,TRUE,0.5,flat,,fixed defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4305,625,50.0,Male,Switzerland,asymptomatic,120.0,,FALSE,st-t abnormality,156.0,TRUE,0.0,upsloping,,fixed defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4306,626,50.0,Male,Switzerland,asymptomatic,145.0,,,normal,139.0,TRUE,0.7,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4307,627,51.0,Female,Switzerland,asymptomatic,120.0,,,normal,127.0,TRUE,1.5,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4308,628,51.0,Male,Switzerland,asymptomatic,110.0,,,normal,92.0,FALSE,0.0,flat,,,4,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4309,629,51.0,Male,Switzerland,asymptomatic,120.0,,TRUE,normal,104.0,FALSE,0.0,flat,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4310,630,51.0,Male,Switzerland,asymptomatic,130.0,,,normal,170.0,FALSE,-0.7,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4311,631,51.0,Male,Switzerland,asymptomatic,130.0,,,st-t abnormality,163.0,FALSE,0.0,,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4312,632,51.0,Male,Switzerland,asymptomatic,140.0,,FALSE,normal,60.0,FALSE,0.0,flat,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4313,633,51.0,Male,Switzerland,asymptomatic,95.0,,,normal,126.0,FALSE,2.2,flat,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4314,634,52.0,Male,Switzerland,asymptomatic,130.0,,,normal,120.0,FALSE,0.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4315,635,52.0,Male,Switzerland,asymptomatic,135.0,,,normal,128.0,TRUE,2.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4316,636,52.0,Male,Switzerland,asymptomatic,165.0,,,normal,122.0,TRUE,1.0,upsloping,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4317,637,52.0,Male,Switzerland,asymptomatic,95.0,,,normal,82.0,TRUE,,,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4318,638,53.0,Male,Switzerland,atypical angina,120.0,,FALSE,normal,95.0,FALSE,0.0,flat,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4319,639,53.0,Male,Switzerland,atypical angina,130.0,,,st-t abnormality,120.0,FALSE,0.7,downsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4320,640,53.0,Male,Switzerland,non-anginal,105.0,,FALSE,normal,115.0,FALSE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4321,641,53.0,Male,Switzerland,non-anginal,160.0,,,lv hypertrophy,122.0,TRUE,0.0,,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4322,642,53.0,Male,Switzerland,asymptomatic,120.0,,,normal,120.0,FALSE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4323,643,53.0,Male,Switzerland,asymptomatic,125.0,,,normal,120.0,FALSE,1.5,upsloping,,,4,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4324,644,53.0,Male,Switzerland,asymptomatic,130.0,,FALSE,lv hypertrophy,135.0,TRUE,1.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4325,645,53.0,Male,Switzerland,asymptomatic,80.0,,,normal,141.0,TRUE,2.0,downsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4326,646,54.0,Male,Switzerland,asymptomatic,120.0,,FALSE,normal,155.0,FALSE,0.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4327,647,54.0,Male,Switzerland,asymptomatic,130.0,,,normal,110.0,TRUE,3.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4328,648,54.0,Male,Switzerland,asymptomatic,180.0,,,normal,150.0,FALSE,1.5,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4329,649,55.0,Male,Switzerland,atypical angina,140.0,,,st-t abnormality,150.0,FALSE,0.2,upsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4330,650,55.0,Male,Switzerland,asymptomatic,115.0,,,normal,155.0,FALSE,0.1,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4331,651,55.0,Male,Switzerland,asymptomatic,120.0,,FALSE,st-t abnormality,92.0,FALSE,0.3,upsloping,,reversable defect,4,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4332,652,55.0,Male,Switzerland,asymptomatic,140.0,,FALSE,normal,83.0,FALSE,0.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4333,653,56.0,Male,Switzerland,non-anginal,120.0,,FALSE,normal,97.0,FALSE,0.0,flat,,reversable defect,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4334,654,56.0,Male,Switzerland,non-anginal,125.0,,,normal,98.0,FALSE,-2.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4335,655,56.0,Male,Switzerland,non-anginal,155.0,,FALSE,st-t abnormality,99.0,FALSE,0.0,flat,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4336,656,56.0,Male,Switzerland,asymptomatic,115.0,,,st-t abnormality,82.0,FALSE,-1.0,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4337,657,56.0,Male,Switzerland,asymptomatic,120.0,,FALSE,st-t abnormality,100.0,TRUE,-1.0,downsloping,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4338,658,56.0,Male,Switzerland,asymptomatic,120.0,,FALSE,st-t abnormality,148.0,FALSE,0.0,flat,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4339,659,56.0,Male,Switzerland,asymptomatic,125.0,,TRUE,normal,103.0,TRUE,1.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4340,660,56.0,Male,Switzerland,asymptomatic,140.0,,,normal,121.0,TRUE,1.8,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4341,661,57.0,Male,Switzerland,non-anginal,105.0,,,normal,148.0,FALSE,0.3,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4342,662,57.0,Male,Switzerland,asymptomatic,110.0,,,st-t abnormality,131.0,TRUE,1.4,upsloping,1.0,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4343,663,57.0,Male,Switzerland,asymptomatic,140.0,,FALSE,normal,120.0,TRUE,2.0,flat,,fixed defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4344,664,57.0,Male,Switzerland,asymptomatic,140.0,,,normal,100.0,TRUE,0.0,,,fixed defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4345,665,57.0,Male,Switzerland,asymptomatic,160.0,,,normal,98.0,TRUE,2.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4346,666,57.0,Male,Switzerland,asymptomatic,95.0,,,normal,182.0,FALSE,0.7,downsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4347,667,58.0,Male,Switzerland,asymptomatic,115.0,,,normal,138.0,FALSE,0.5,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4348,668,58.0,Male,Switzerland,asymptomatic,130.0,,FALSE,st-t abnormality,100.0,TRUE,1.0,flat,,fixed defect,4,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4349,669,58.0,Male,Switzerland,asymptomatic,170.0,,,st-t abnormality,105.0,TRUE,0.0,,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4350,670,59.0,Male,Switzerland,non-anginal,125.0,,,normal,175.0,FALSE,2.6,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4351,671,59.0,Male,Switzerland,asymptomatic,110.0,,,normal,94.0,FALSE,0.0,,,fixed defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4352,672,59.0,Male,Switzerland,asymptomatic,120.0,,FALSE,normal,115.0,FALSE,0.0,flat,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4353,673,59.0,Male,Switzerland,asymptomatic,125.0,,,normal,119.0,TRUE,0.9,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4354,674,59.0,Male,Switzerland,asymptomatic,135.0,,FALSE,normal,115.0,TRUE,1.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4355,675,60.0,Male,Switzerland,non-anginal,115.0,,,normal,143.0,FALSE,2.4,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4356,676,60.0,Male,Switzerland,asymptomatic,125.0,,,normal,110.0,FALSE,0.1,upsloping,2.0,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4357,677,60.0,Male,Switzerland,asymptomatic,130.0,,,st-t abnormality,130.0,TRUE,1.1,downsloping,1.0,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4358,678,60.0,Male,Switzerland,asymptomatic,135.0,,FALSE,normal,63.0,TRUE,0.5,upsloping,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4359,679,60.0,Male,Switzerland,asymptomatic,160.0,,FALSE,st-t abnormality,99.0,TRUE,0.5,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4360,680,60.0,Male,Switzerland,asymptomatic,160.0,,,normal,149.0,FALSE,0.4,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4361,681,61.0,Male,Switzerland,non-anginal,200.0,,,st-t abnormality,70.0,FALSE,0.0,,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4362,682,61.0,Male,Switzerland,asymptomatic,105.0,,,normal,110.0,TRUE,1.5,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4363,683,61.0,Male,Switzerland,asymptomatic,110.0,,,normal,113.0,FALSE,1.4,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4364,684,61.0,Male,Switzerland,asymptomatic,125.0,,FALSE,normal,105.0,TRUE,0.0,downsloping,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4365,685,61.0,Male,Switzerland,asymptomatic,130.0,,FALSE,lv hypertrophy,115.0,FALSE,0.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4366,686,61.0,Male,Switzerland,asymptomatic,130.0,,,normal,77.0,FALSE,2.5,flat,,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4367,687,61.0,Male,Switzerland,asymptomatic,150.0,,FALSE,normal,105.0,TRUE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4368,688,61.0,Male,Switzerland,asymptomatic,150.0,,FALSE,normal,117.0,TRUE,2.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4369,689,61.0,Male,Switzerland,asymptomatic,160.0,,TRUE,st-t abnormality,145.0,FALSE,1.0,flat,,reversable defect,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4370,690,62.0,Female,Switzerland,typical angina,140.0,,,normal,143.0,FALSE,0.0,,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4371,691,62.0,Female,Switzerland,asymptomatic,120.0,,,st-t abnormality,123.0,TRUE,1.7,downsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4372,692,62.0,Male,Switzerland,typical angina,120.0,,,lv hypertrophy,134.0,FALSE,-0.8,flat,2.0,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4373,693,62.0,Male,Switzerland,non-anginal,160.0,,FALSE,normal,72.0,TRUE,0.0,flat,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4374,694,62.0,Male,Switzerland,asymptomatic,115.0,,,normal,128.0,TRUE,2.5,downsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4375,695,62.0,Male,Switzerland,asymptomatic,115.0,,,normal,72.0,TRUE,-0.5,flat,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4376,696,62.0,Male,Switzerland,asymptomatic,150.0,,,st-t abnormality,78.0,FALSE,2.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4377,697,63.0,Male,Switzerland,asymptomatic,100.0,,,normal,109.0,FALSE,-0.9,flat,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4378,698,63.0,Male,Switzerland,asymptomatic,140.0,,,lv hypertrophy,149.0,FALSE,2.0,upsloping,,,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4379,699,63.0,Male,Switzerland,asymptomatic,150.0,,FALSE,normal,86.0,TRUE,2.0,flat,,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4380,700,63.0,Male,Switzerland,asymptomatic,150.0,,,st-t abnormality,154.0,FALSE,3.7,upsloping,,,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4381,701,63.0,Male,Switzerland,asymptomatic,185.0,,FALSE,normal,98.0,TRUE,0.0,upsloping,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4382,702,64.0,Female,Switzerland,asymptomatic,200.0,,FALSE,normal,140.0,TRUE,1.0,flat,,normal,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4383,703,64.0,Female,Switzerland,asymptomatic,95.0,,,normal,145.0,FALSE,1.1,downsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4384,704,64.0,Male,Switzerland,asymptomatic,110.0,,,normal,114.0,TRUE,1.3,downsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4385,705,65.0,Male,Switzerland,asymptomatic,115.0,,FALSE,normal,93.0,TRUE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4386,706,65.0,Male,Switzerland,asymptomatic,145.0,,,st-t abnormality,67.0,FALSE,,,,fixed defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4387,707,65.0,Male,Switzerland,asymptomatic,155.0,,,normal,154.0,FALSE,1.0,upsloping,,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4388,708,65.0,Male,Switzerland,asymptomatic,160.0,,TRUE,st-t abnormality,122.0,FALSE,,,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4389,709,66.0,Female,Switzerland,asymptomatic,155.0,,,normal,90.0,FALSE,0.0,,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4390,710,66.0,Male,Switzerland,asymptomatic,150.0,,FALSE,normal,108.0,TRUE,2.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4391,711,67.0,Male,Switzerland,typical angina,145.0,,FALSE,lv hypertrophy,125.0,FALSE,0.0,flat,,normal,2,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4392,712,68.0,Male,Switzerland,asymptomatic,135.0,,FALSE,st-t abnormality,120.0,TRUE,0.0,upsloping,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4393,713,68.0,Male,Switzerland,asymptomatic,145.0,,,normal,136.0,FALSE,1.8,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4394,714,69.0,Male,Switzerland,asymptomatic,135.0,,FALSE,normal,130.0,FALSE,0.0,flat,,fixed defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4395,715,69.0,Male,Switzerland,asymptomatic,,,FALSE,st-t abnormality,,,,,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4396,716,70.0,Male,Switzerland,asymptomatic,115.0,,FALSE,st-t abnormality,92.0,TRUE,0.0,flat,,reversable defect,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4397,717,70.0,Male,Switzerland,asymptomatic,140.0,,TRUE,normal,157.0,TRUE,2.0,flat,,reversable defect,3,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4398,718,72.0,Male,Switzerland,non-anginal,160.0,,,lv hypertrophy,114.0,FALSE,1.6,flat,2.0,,0,0,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4399,719,73.0,Female,Switzerland,non-anginal,160.0,,FALSE,st-t abnormality,121.0,FALSE,0.0,upsloping,,normal,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae
+4400,720,74.0,Male,Switzerland,atypical angina,145.0,,,st-t abnormality,123.0,FALSE,1.3,upsloping,,,1,1,2026-10-09 18:55:44.585599+00:00,574f2fa2b43012fa25fca4fcdb36bd7c6bccdd0af4242f6c0e4c8633c5a072ae

@@ -19,7 +19,7 @@ VENV_BIN   := $(VENV)/Scripts   # Windows path; change to $(VENV)/bin on Linux/m
 PIP        := $(VENV_BIN)/pip
 HEART_RISK := $(VENV_BIN)/heart-risk
 
-.PHONY: setup db-up db-down db-check ingest test eda
+.PHONY: setup db-up db-down db-check ingest test eda clean split
 
 # ── 1. Create venv and install all dependencies ───────────────────────────────
 setup:
@@ -61,3 +61,13 @@ test:
 eda:
 	@echo "→ Running Exploratory Data Analysis..."
 	$(HEART_RISK) eda && echo "✓ EDA complete." || (echo "✗ EDA FAILED." && exit 1)
+
+# ── 8. Run Data Cleaning ─────────────────────────────────────────────────────
+clean:
+	@echo "→ Running Phase 3 Data Cleaning..."
+	$(HEART_RISK) clean && echo "✓ Cleaning complete." || (echo "✗ Cleaning FAILED." && exit 1)
+
+# ── 9. Run Data Split ────────────────────────────────────────────────────────
+split:
+	@echo "→ Running Phase 4 Data Split..."
+	$(HEART_RISK) split && echo "✓ Split complete." || (echo "✗ Split FAILED." && exit 1)

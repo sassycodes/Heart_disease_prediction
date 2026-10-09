@@ -119,3 +119,20 @@ If we add missing indicators (e.g. `ca_is_missing`), the model might use them as
 The decision on whether `ca`, `thal`, and `slope` become model features will be left to the preprocessing phase. We will likely train two feature sets: "all features" vs "deployable" (which drops hospital-skewed features). This is an OPEN DECISION.
 
 **Alternative rejected:** Add missing indicators in cleaning. Rejected because it hardcodes confounding features into the cleaned data table.
+
+---
+
+## ADR-010: Feature Sets and External Evaluation Rules
+
+**Decision:**
+1. **Primary Dataset:** Cleveland and Hungary.
+2. **External Sets:** Switzerland and VA Long Beach (never used for training/tuning).
+3. **Feature Sets:**
+   - `F1`: age, sex, cp, trestbps, chol, fbs, restecg, thalch, exang, oldpeak. `ca`, `thal`, and `slope` are dropped due to massive missingness patterns (NOT target relationships).
+   - `F2`: F1 minus `chol` and `fbs`.
+4. **Evaluation:** Switzerland is evaluated with F2 only. VA Long Beach is evaluated with F1 on (a) complete-case rows, and (b) all rows with imputation.
+
+**Why:**
+Switzerland has 100% missing `chol` and 61% missing `fbs`. Evaluating it on F1 would mean evaluating mostly on imputed data, rendering the test invalid. F2 drops these to provide a robust check for Switzerland. VA Long Beach has ~28% missingness in several F1 features, so checking both complete-case and imputed performance reveals imputation degradation.
+
+**Alternative rejected:** Pooled dataset with all features. Rejected because it enables shortcut learning via missingness proxies (confounding), falsely inflating model performance.
