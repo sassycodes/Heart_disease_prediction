@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16          # Pin major version for reproducibility
+    container_name: heart_risk_db
+    restart: unless-stopped
+
+    # ── Credentials come from the .env file, never hardcoded ─────────────────
+    environment:
+      POSTGRES_USER:     ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB:       ${POSTGRES_DB}
+
+    ports:
+      # Format: "host:container" — host port is configurable via .env
+      - "${POSTGRES_PORT:-5432}:5432"
+
+    volumes:
+      # Named volume ensures data survives container restarts
+      - postgres_data:/var/lib/postgresql/data
+      # Run schema.sql automatically on first startup
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+
+    healthcheck:
+      # pg_isready returns exit 0 only when Postgres is fully accepting connections
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  # Named volume: Docker manages the storage location on the host
+  postgres_data:
+    driver: local

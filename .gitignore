@@ -1,0 +1,54 @@
+# ── Secrets ────────────────────────────────────────────────────────────────────
+.env                  # Real credentials; never commit this
+
+# ── Raw Data (large files, potentially sensitive) ──────────────────────────────
+data/raw/             # CSVs live here; use DVC or manual download
+data/processed/       # Generated artifacts; never commit
+data/splits/          # Train/test splits; generated, not source
+
+# ── Python runtime ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Testing and coverage ──────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+*.xml
+
+# ── Notebooks (use .py scripts instead for reproducibility) ───────────────────
+*.ipynb
+.ipynb_checkpoints/
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS artifacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Artifacts (generated reports, models) ────────────────────────────────────
+artifacts/models/
+artifacts/reports/*.html
+# Keep .md reports in git for traceability; exclude binary model files
+
+# ── MLflow / experiment tracking ──────────────────────────────────────────────
+mlruns/
+mlflow.db

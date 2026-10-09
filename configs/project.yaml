@@ -1,0 +1,48 @@
+# ── configs/project.yaml ─────────────────────────────────────────────────────
+# All non-secret project settings live here.
+# Secrets (passwords, connection strings) live in .env — never in this file.
+# ─────────────────────────────────────────────────────────────────────────────
+
+project:
+  name: heart-disease-risk
+  version: "0.1.0"
+
+reproducibility:
+  # Every random operation in this project uses this seed so results are repeatable.
+  random_seed: 42
+
+paths:
+  # Path to the raw CSV file, relative to the project root.
+  raw_csv: data/raw/heart_disease_uci.csv
+  # Directory where generated reports are written.
+  reports_dir: artifacts/reports
+
+database:
+  # Table that holds the raw, untouched CSV data.
+  raw_table: patients_raw
+  # Table that logs every ingest run (timestamp, hash, row counts, status).
+  log_table: ingestion_log
+
+validation:
+  # ── Expected shape of the raw CSV ─────────────────────────────────────────
+  # If the file doesn't have EXACTLY these columns, ingestion stops.
+  expected_raw_columns:
+    - id
+    - age
+    - sex
+    - dataset
+    - cp
+    - trestbps
+    - chol
+    - fbs
+    - restecg
+    - thalch
+    - exang
+    - oldpeak
+    - slope
+    - ca
+    - thal
+    - num
+
+  # If the file doesn't have EXACTLY this many rows, ingestion stops.
+  expected_row_count: 920

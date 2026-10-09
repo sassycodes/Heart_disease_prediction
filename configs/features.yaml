@@ -1,0 +1,74 @@
+# DRAFT from EDA: not authoritative until approved.
+# Defines the expected types, plausible ranges, and cleaning rules for each column.
+
+features:
+  age:
+    type: numeric
+    min: 1
+    max: 120
+    treat_0_as_missing: false
+
+  sex:
+    type: categorical
+    allowed: ["Male", "Female"]
+
+  dataset:
+    type: categorical
+    allowed: ["Cleveland", "Hungary", "Switzerland", "VA Long Beach"]
+
+  cp:
+    type: categorical
+    allowed: ["typical angina", "atypical angina", "non-anginal", "asymptomatic"]
+
+  trestbps:
+    type: numeric
+    min: 1
+    max: 300
+    treat_0_as_missing: true
+
+  chol:
+    type: numeric
+    min: 1
+    max: 1000
+    treat_0_as_missing: true
+
+  fbs:
+    type: boolean
+    allowed: ["TRUE", "FALSE"]
+
+  restecg:
+    type: categorical
+    allowed: ["normal", "st-t abnormality", "lv hypertrophy"]
+
+  thalch:
+    type: numeric
+    min: 1
+    max: 300
+    treat_0_as_missing: false
+
+  exang:
+    type: boolean
+    allowed: ["TRUE", "FALSE"]
+
+  oldpeak:
+    type: numeric
+    min: 0.0 # Proposing to treat negatives as missing/invalid
+    max: 10.0
+    treat_0_as_missing: false
+
+  slope:
+    type: categorical
+    allowed: ["upsloping", "flat", "downsloping", "Missing"]
+
+  ca:
+    type: categorical
+    allowed: ["0", "1", "2", "3", "Missing"]
+
+  thal:
+    type: categorical
+    allowed: ["normal", "fixed defect", "reversable defect", "Missing"]
+
+target:
+  num:
+    type: target
+    formulation: binary # 0 vs >0

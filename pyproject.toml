@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heart-risk"
+version = "0.1.0"
+description = "Heart disease risk prediction pipeline — Phase 1: Data Ingestion"
+requires-python = ">=3.10"
+
+# ── Runtime dependencies ────────────────────────────────────────────────────────
+dependencies = [
+    "pandas>=2.0",           # DataFrame manipulation
+    "sqlalchemy>=2.0",       # Database ORM / engine abstraction
+    "psycopg2-binary>=2.9",  # PostgreSQL driver for SQLAlchemy
+    "python-dotenv>=1.0",    # Loads .env files into os.environ
+    "pyyaml>=6.0",           # Parses configs/project.yaml
+    "click>=8.1",            # Powers the CLI (cli.py)
+    "matplotlib>=3.7",       # Plotting
+    "seaborn>=0.12",         # Statistical data visualization
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",           # Test runner
+    "pytest-cov>=4.1",       # Coverage reports
+]
+
+# ── CLI entry point ───────────────────────────────────────────────────────────
+[project.scripts]
+heart-risk = "heart_risk.cli:cli"
+
+# ── Package discovery ─────────────────────────────────────────────────────────
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ── Pytest configuration ──────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-v --tb=short"
