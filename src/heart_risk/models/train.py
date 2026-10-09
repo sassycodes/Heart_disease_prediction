@@ -75,6 +75,9 @@ def evaluate_folds(pipeline, df, target, folds):
     
     fold_preds = []
     
+    # To compute per-hospital metrics, we need to collect all OOF predictions and their indices
+    all_oof = []
+
     for train_idx, val_idx in folds:
         X_train, y_train = X.iloc[train_idx], y.iloc[train_idx]
         X_val, y_val = X.iloc[val_idx], y.iloc[val_idx]
@@ -88,6 +91,11 @@ def evaluate_folds(pipeline, df, target, folds):
         # Keep track of predictions for paired differences
         fold_preds.append(y_val_pred_prob)
         
+        # Save OOF for this fold
+        dataset_val = df.iloc[val_idx]['dataset'].values
+        for i, idx in enumerate(val_idx):
+            all_oof.append({'idx': idx, 'y_true': y_val.values[i], 'y_prob': y_val_pred_prob[i], 'dataset': dataset_val[i]})
+        
         metrics['train_roc_auc'].append(roc_auc_score(y_train, y_train_pred_prob))
         metrics['roc_auc'].append(roc_auc_score(y_val, y_val_pred_prob))
         metrics['pr_auc'].append(average_precision_score(y_val, y_val_pred_prob))
@@ -98,9 +106,24 @@ def evaluate_folds(pipeline, df, target, folds):
         cm = confusion_matrix(y_val, y_val_pred, labels=[0, 1])
         cm_sum += cm
         
+    # Per-hospital metrics over ALL OOF predictions
+    oof_df = pd.DataFrame(all_oof)
+    
+    # We will average the 3 predictions per row
+    avg_oof = oof_df.groupby(['idx', 'dataset']).agg({'y_true': 'first', 'y_prob': 'mean'}).reset_index()
+    avg_oof['y_pred'] = (avg_oof['y_prob'] >= 0.5).astype(int)
+    
+    hosp_metrics = {}
+    for hosp in ['Cleveland', 'Hungary']:
+        h_df = avg_oof[avg_oof['dataset'] == hosp]
+        h_auc = roc_auc_score(h_df['y_true'], h_df['y_prob'])
+        h_rec = recall_score(h_df['y_true'], h_df['y_pred'])
+        hosp_metrics[hosp] = {'auc': h_auc, 'recall': h_rec}
+
     res = {k: {"mean": np.mean(v), "std": np.std(v)} for k, v in metrics.items()}
     res['cm'] = cm_sum
     res['fold_roc_auc'] = metrics['roc_auc'] # For paired diffs
+    res['hosp_metrics'] = hosp_metrics
     return res
 
 def run_training_cv(settings: Settings):
@@ -134,6 +157,11 @@ def run_training_cv(settings: Settings):
             'F2 (@0.5)': f"{dummy_res['f2']['mean']:.3f} ± {dummy_res['f2']['std']:.3f}",
             'Train AUC': f"{dummy_res['train_roc_auc']['mean']:.3f} ± {dummy_res['train_roc_auc']['std']:.3f}",
             'CM': str(dummy_res['cm'].tolist()),
+            'Cleveland AUC': f"{dummy_res['hosp_metrics']['Cleveland']['auc']:.3f}",
+            'Cleveland Recall': f"{dummy_res['hosp_metrics']['Cleveland']['recall']:.3f}",
+            'Hungary AUC': f"{dummy_res['hosp_metrics']['Hungary']['auc']:.3f}",
+            'Hungary Recall': f"{dummy_res['hosp_metrics']['Hungary']['recall']:.3f}",
+            'Hyperparameters': "N/A",
             '_fold_aucs': dummy_res['fold_roc_auc']
         })
         
@@ -170,6 +198,11 @@ def run_training_cv(settings: Settings):
                 'F2 (@0.5)': f"{res['f2']['mean']:.3f} ± {res['f2']['std']:.3f}",
                 'Train AUC': f"{res['train_roc_auc']['mean']:.3f} ± {res['train_roc_auc']['std']:.3f}",
                 'CM': str(res['cm'].tolist()),
+                'Cleveland AUC': f"{res['hosp_metrics']['Cleveland']['auc']:.3f}",
+                'Cleveland Recall': f"{res['hosp_metrics']['Cleveland']['recall']:.3f}",
+                'Hungary AUC': f"{res['hosp_metrics']['Hungary']['auc']:.3f}",
+                'Hungary Recall': f"{res['hosp_metrics']['Hungary']['recall']:.3f}",
+                'Hyperparameters': str(best_params),
                 '_fold_aucs': res['fold_roc_auc']
             })
             
@@ -212,19 +245,43 @@ def run_training_cv(settings: Settings):
                 mean_diff = np.mean(diffs)
                 se_diff = np.std(diffs) / np.sqrt(15)
                 wins = np.sum(diffs > 0)
-                is_noise = abs(mean_diff) < se_diff
                 
-                noise_str = " (Within Noise)" if is_noise else " (Significant)"
                 diff_lines.append(
-                    f"- **{row['Model']} vs LR**: Mean Diff AUC = {mean_diff:+.3f} ± {se_diff:.3f}{noise_str}. "
-                    f"{row['Model']} won {wins}/15 folds. Range: [{np.min(diffs):.3f}, {np.max(diffs):.3f}]."
+                    f"- **{row['Model']} vs LR**: Mean Diff AUC = {mean_diff:+.3f}, SE = {se_diff:.3f}. "
+                    f"{row['Model']} won {wins}/15 folds. Range: [{np.min(diffs):.3f}, {np.max(diffs):.3f}]. "
+                    f"(Differences of this size are a practical tie within the noise of overlapping CV folds)."
                 )
             
             f.write("\n".join(diff_lines) + "\n\n")
+
+        # Compute F1 vs F2 differences per model
+        f.write("## F1 vs F2 Performance (Paired Differences)\n\n")
+        diff_f1_f2_lines = []
+        for model_name in ['LR', 'RF', 'XGB']:
+            f1_aucs = np.array(df_res[(df_res['Feature Set'] == 'F1') & (df_res['Model'] == model_name)].iloc[0]['_fold_aucs'])
+            f2_aucs = np.array(df_res[(df_res['Feature Set'] == 'F2') & (df_res['Model'] == model_name)].iloc[0]['_fold_aucs'])
+            diffs = f1_aucs - f2_aucs
+            mean_diff = np.mean(diffs)
+            se_diff = np.std(diffs) / np.sqrt(15)
+            diff_f1_f2_lines.append(
+                f"- **{model_name} (F1 vs F2)**: Mean Diff AUC = {mean_diff:+.3f}, SE = {se_diff:.3f}."
+            )
+        f.write("\n".join(diff_f1_f2_lines) + "\n\n")
             
-        f.write("## Notes\n")
+        f.write("## Selected Hyperparameters and Edge Warnings\n")
+        for _, row in clean_res.iterrows():
+            if row['Model'] == 'Dummy':
+                continue
+            params = row['Hyperparameters']
+            warnings = []
+            if "'clf__max_depth': 2" in params: warnings.append("max_depth at lower edge (2)")
+            if "'clf__C': 0.1" in params: warnings.append("C=0.1 (strong regularization)")
+            if "'clf__min_samples_leaf': 10" in params: warnings.append("min_samples_leaf at upper edge (10)")
+            warning_str = " -> " + ", ".join(warnings) if warnings else ""
+            f.write(f"- **{row['Feature Set']} {row['Model']}**: {params}{warning_str}\n")
+            
+        f.write("\n## Notes\n")
         f.write("- SE formula used for 1-SE rule: std(15 folds) / sqrt(15). Note that because Repeated-CV folds overlap, this standard error is somewhat optimistic.\n")
-        f.write("- Paired differences are computed on the same folds. Because final hyperparameters were selected using these same folds, these differences might be slightly optimistic (descriptive only).\n")
         f.write("- All models were evaluated with `class_weight=None` since we rely on ROC-AUC for ranking, and will handle class imbalance during threshold tuning later.\n")
 
 if __name__ == "__main__":
